@@ -1,0 +1,28 @@
+  #include <iostream>
+using namespace std;
+
+char* stringRev(char *s);
+
+int main() {
+    char str[] = "Happy Day";
+    cout << stringRev(str) << endl;
+    system("pause > 0");
+    return 0;
+}
+
+char* stringRev(char *s) {
+    int length = 0;
+    while (*(s + length) != '\0') {
+        length++;
+    }
+
+    char *tmp = new char[length + 1];
+
+    for (int i = 0; i < length; i++) {
+        *(tmp + i) = *(s + length - 1 - i);
+    }
+
+    *(tmp + length) = '\0';
+
+    return tmp;
+}
